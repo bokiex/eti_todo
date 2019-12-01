@@ -1,5 +1,20 @@
-<ul>
-    {% for item in items %}
-        <li>{{ item.content }}</li>
-    {% endfor %}
-</ul>
+{% extends 'base.html' %}
+
+{% load bootstrap4 %}
+
+{% block content %}
+    <h1>Todo</h1>
+    <ul>
+        {% for item in items %}
+            <li>{{ item.content }}</li>
+        {% endfor %}
+    </ul>
+
+    <form action="{% url 'todo_index' %}" method="post" class="form">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+        {% buttons %}
+            <button type="submit" class="btn btn-primary">Submit</button>
+        {% endbuttons %}
+    </form>
+{% endblock %}

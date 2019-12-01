@@ -4,19 +4,18 @@ from .models import Todo
 
 
 def index(request):
-    items = Todo.objects.all()
-    return render(request, 'todo-index.html', {'items': items})
+    form = TodoForm()
 
+    if request.method == "POST":
+        form = TodoForm(request.POST)
 
-def post(request):
-    form = TodoForm(request.POST)
-
-    if form.is_valid():
-        item = Todo(
-            content=form.cleaned_data['content'],
-            archived=False
-        )
-        item.save()
+        if form.is_valid():
+            item = Todo(
+                content=form.cleaned_data['content'],
+                archived=False
+            )
+            item.save()
 
     items = Todo.objects.all()
-    return render(request, 'todo-index.html', {'items': items})
+
+    return render(request, 'todo-index.html', {'items': items, 'form': form})
