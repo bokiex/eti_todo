@@ -2,19 +2,45 @@
 
 {% load bootstrap4 %}
 
-{% block content %}
-    <h1>Todo</h1>
-    <ul>
-        {% for item in items %}
-            <li>{{ item.content }}</li>
-        {% endfor %}
-    </ul>
+{% block title %}
+    Todo
+{% endblock  %}
 
-    <form action="{% url 'todo_index' %}" method="post" class="form">
+{% block content %}
+    <form action="{% url 'todo_create' %}" method="post" class="form">
         {% csrf_token %}
         {% bootstrap_form form %}
         {% buttons %}
             <button type="submit" class="btn btn-primary">Submit</button>
         {% endbuttons %}
     </form>
+
+    <div class="card">
+        <div class="card-header">
+            Todo
+        </div>
+        <ul class="list-group list-group-flush">
+            {% for item in items %}
+                <li class="list-group-item">
+                    {{ item.content }}
+                    <span class="float-right">
+                        <form action="{% url 'todo_archive' todo=item.id %}" method="post">
+                            {% csrf_token %}
+                            {% buttons %}
+                                <button type="submit" class="btn btn-sm btn-info">Archive</button>
+                            {% endbuttons %}
+                        </form>
+                        <form action="{% url 'todo_delete' todo=item.id %}" method="post">
+                            {% csrf_token %}
+                            {% buttons %}
+                                <button type="submit" class="btn btn-sm btn-warning">Delete</button>
+                            {% endbuttons %}
+                        </form>
+                    </span>
+                </li>
+            {% empty %}
+                <li class="list-group-item disabled">No todo items yet..</li>
+            {% endfor %}
+        </ul>
+    </div>
 {% endblock %}

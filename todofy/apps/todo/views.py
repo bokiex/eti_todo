@@ -1,11 +1,14 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .forms import TodoForm
 from .models import Todo
 
 
 def index(request):
-    form = TodoForm()
+    items = Todo.objects.filter(archived=False)
+    return render(request, 'todo-index.html', {'items': items, 'form': TodoForm()})
 
+
+def create(request):
     if request.method == "POST":
         form = TodoForm(request.POST)
 
@@ -15,7 +18,17 @@ def index(request):
                 archived=False
             )
             item.save()
+    return redirect('todo_index')
 
-    items = Todo.objects.all()
 
-    return render(request, 'todo-index.html', {'items': items, 'form': form})
+def archive(request, todo):
+    item = Todo.objects.get(id=todo)
+    item.archived = True
+    item.save()
+    return redirect('todo_index')
+
+
+def delete(request, todo):
+    item = Todo.objects.get(id=todo)
+    item.delete()
+    return redirect('todo_index')
