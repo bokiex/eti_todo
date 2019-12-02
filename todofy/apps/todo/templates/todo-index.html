@@ -6,6 +6,10 @@
     Todo
 {% endblock  %}
 
+{% block breadcrumb %}
+  <li class="breadcrumb-item active">Todo</li>
+{% endblock %}
+
 {% block content %}
     <form action="{% url 'todo_create' %}" method="post" class="form">
         {% csrf_token %}
