@@ -28,18 +28,20 @@
                 <li class="list-group-item">
                     {{ item.content }}
                     <span class="float-right">
-                        <form action="{% url 'todo_archive' todo=item.id %}" method="post">
-                            {% csrf_token %}
-                            {% buttons %}
-                                <button type="submit" class="btn btn-sm btn-info">Archive</button>
-                            {% endbuttons %}
-                        </form>
-                        <form action="{% url 'todo_delete' todo=item.id %}" method="post">
-                            {% csrf_token %}
-                            {% buttons %}
-                                <button type="submit" class="btn btn-sm btn-warning">Delete</button>
-                            {% endbuttons %}
-                        </form>
+                        <div class="row">
+                            <form style='padding: 0.2em' action="{% url 'todo_archive' todo=item.id %}" method="post">
+                                {% csrf_token %}
+                                {% buttons %}
+                                    <button type="submit" class="btn btn-sm btn-info">Archive</button>
+                                {% endbuttons %}
+                            </form>
+                            <form style='padding: 0.2em' action="{% url 'todo_delete' todo=item.id %}" method="post">
+                                {% csrf_token %}
+                                {% buttons %}
+                                    <button type="submit" class="btn btn-sm btn-warning">Delete</button>
+                                {% endbuttons %}
+                            </form>
+                        </div>
                     </span>
                 </li>
             {% empty %}
