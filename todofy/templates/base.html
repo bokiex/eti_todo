@@ -7,7 +7,28 @@
 {% endblock  %} %
 
 {% block bootstrap4_content %}
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="{% url 'todo_index' %}">Todofy</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item {% if request.resolver_match.url_name == 'todo_index' %}active{% endif %}">
+                    <a class="nav-link" href="{% url 'todo_index' %}">Todo</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">History</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
     <div class="container">
+        <ol class="breadcrumb my-4">
+            {% block breadcrumb %}
+            {% endblock %}
+        </ol>
         {% block content %}(no content){% endblock %}
     </div>
 {% endblock  %}
