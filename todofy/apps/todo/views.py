@@ -32,3 +32,8 @@ def delete(request, todo):
     item = Todo.objects.get(id=todo)
     item.delete()
     return redirect('todo_index')
+
+
+def history(request):
+    items = Todo.objects.filter(archived=True)
+    return render(request, 'todo-history.html', {'items': items})

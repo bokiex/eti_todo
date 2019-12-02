@@ -16,10 +16,10 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item {% if request.resolver_match.url_name == 'todo_index' %}active{% endif %}">
-                    <a class="nav-link" href="{% url 'todo_index' %}">Todo</a>
+                    <a id="index" class="nav-link" href="{% url 'todo_index' %}">Todo</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">History</a>
+                <li class="nav-item {% if request.resolver_match.url_name == 'todo_history' %}active{% endif %}">
+                    <a id="history" class="nav-link" href="{% url 'todo_history' %}">History</a>
                 </li>
             </ul>
         </div>
