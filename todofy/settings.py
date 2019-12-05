@@ -56,7 +56,7 @@ ROOT_URLCONF = 'todofy.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['todofy/templates/', 'accounts/templates'],
+        'DIRS': ['todofy/templates/'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
