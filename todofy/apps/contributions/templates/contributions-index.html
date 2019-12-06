@@ -3,7 +3,7 @@
 {% load bootstrap4 %}
 
 {% block title %}
-    Contributions
+    Contributors
 {% endblock  %}
 
 {% block breadcrumb %}
@@ -15,28 +15,37 @@
         <div class="card-header text-center">
             <div class="row">
                 <div class="col-md-1"></div>
-                <div class="col-md-2">
-                    <h5>Developer</h5>
-                    <span>Daniel Ian Dean</span> <br>
-                </div>
-                <div class="col-md-2">
-                        <h5>Technical Lead</h5>
-                        <span>Keith Toh</span> <br> 
-                </div>
-                <div class="col-md-2">
+                
+                <div class="col-md-12">
                     <h5>Project Manager</h5>
                     <span>Koh Bok Yan</span> <br>
-                </div>
-                <div class="col-md-2">
-                    <h5>QA Lead</h5>
-                    <span>Lim Yue Cong</span> <br>
-                </div>                    
-                <div class="col-md-2">
-                    <h5>QA Member</h5>
-                    <span>Aloysius Lim</span>
-                </div>
+                </div>            
+                
                 <div class="col-md-1"></div>
-            </div>      
+            </div>
+            
+            <div class="row" style="padding-top: 20px">
+                <div class="col-md-3"></div>
+                <div class="col-md-3">
+                    <h5>Tech Lead</h5>
+                    <span>Keith Toh</span>
+                </div>
+                <div class="col-md-3">
+                        <h5>QA Lead</h5>
+                        <span>Lim Yue Cong</span> <br>
+                </div> 
+                <div class="col-md-3"></div>
+            </div> 
+            <div class="row" style="padding-top: 20px">
+                    <div class="col-md-6">
+                            <h5>Developer</h5>
+                            <span>Daniel Ian Dean</span> <br>
+                    </div>
+                    <div class="col-md-6">
+                            <h5>QA Member</h5>
+                            <span>Aloysius Lim</span>
+                    </div>
+                </div>      
         </div>
     </div>
 {% endblock %}
