@@ -3,49 +3,114 @@
 {% load bootstrap4 %}
 
 {% block title %}
-    Contributors
+    Team Contributions
 {% endblock  %}
 
 {% block breadcrumb %}
-  <li class="breadcrumb-item active">Contributors</li>
+  <li class="breadcrumb-item active">Team Contributions</li>
 {% endblock %}
 
 {% block content %}
     <div class="card">
         <div class="card-header text-center">
             <div class="row">
-                <div class="col-md-1"></div>
-                
-                <div class="col-md-12">
-                    <h5>Project Manager</h5>
-                    <span>Koh Bok Yan</span> <br>
-                </div>            
-                
-                <div class="col-md-1"></div>
-            </div>
-            
-            <div class="row" style="padding-top: 20px">
-                <div class="col-md-3"></div>
                 <div class="col-md-3">
-                    <h5>Tech Lead</h5>
-                    <span>Keith Toh</span>
+                    <h4>Roles</h4>
                 </div>
                 <div class="col-md-3">
-                        <h5>QA Lead</h5>
-                        <span>Lim Yue Cong</span> <br>
+                    <h4>Contributor</h4>
                 </div> 
-                <div class="col-md-3"></div>
-            </div> 
-            <div class="row" style="padding-top: 20px">
-                    <div class="col-md-6">
-                            <h5>Developer</h5>
-                            <span>Daniel Ian Dean</span> <br>
-                    </div>
-                    <div class="col-md-6">
-                            <h5>QA Member</h5>
-                            <span>Aloysius Lim</span>
-                    </div>
-                </div>      
+                <div class="col-md-6">
+                    <h4>Tasks Assigned</h4>
+                </div>       
+            </div>    
         </div>
     </div>
+
+    <div class="card">
+        <div class="card-header text-center">
+            <div class="row">
+                <div class="col-md-3">
+                    <span>Project Manager</span>
+                </div>
+                <div class="col-md-3">
+                    <span>Koh Bok Yan</span>
+                </div> 
+                <div class="col-md-6">
+                    <span>Project Management</span> </br>
+                    <span>Authentication feature implementation</span>
+                </div>
+            </div>    
+        </div>
+    </div>
+    
+    <div class="card">
+        <div class="card-header text-center">
+            <div class="row">
+                <div class="col-md-3">
+                    <span>Technical Lead</span>
+                </div>
+                <div class="col-md-3">
+                    <span>Keith Toh</span>
+                </div> 
+                <div class="col-md-6">
+                    <span>To-Do Page implementation</span></br>
+                    <span>To-Do History page implementation</span>
+                </div>     
+            </div>    
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header text-center">
+            <div class="row">
+                <div class="col-md-3">
+                    <span>Developer</span>
+                </div>
+                <div class="col-md-3">
+                    <span>Daniel Ian Dean</span>
+                </div> 
+                <div class="col-md-6">
+                    <span>Team Contributions page implementation</span> </br>
+                    <span>Implementation of all test cases</span>
+                </div>         
+            </div>    
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header text-center">
+            <div class="row">
+                <div class="col-md-3">
+                    <span>QA Lead</span>
+                </div>
+
+                <div class="col-md-3">
+                    <span>Lim Yue Cong</span>
+                </div> 
+                <div class="col-md-6">
+                    <span>Document Test Cases for authentication feature</span> </br>
+                    <span>Document Test Cases for To-Do page</span>
+                </div>
+            </div>    
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header text-center">
+            <div class="row">
+                <div class="col-md-3">
+                    <span>QA Member</span>
+                </div>
+                <div class="col-md-3">
+                    <span>Aloysius Lim</span>
+                </div> 
+                <div class="col-md-6">
+                    <span>Document Test Cases for To-Do History page</span> </br>
+                    <span>Document Test Cases for Team Contributions page</span>
+                </div>          
+            </div>    
+        </div>
+    </div>
+        
 {% endblock %}
