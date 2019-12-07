@@ -17,9 +17,10 @@ from django.conf.urls import include, url
 from django.contrib import admin
 from django.urls import path
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-
     url('todo/', include('todofy.apps.todo.urls')),
-    url('contributions/', include('todofy.apps.contributions.urls'))
+    url('contributions/', include('todofy.apps.contributions.urls')),
+    url('', include('todofy.apps.accounts.urls')),
 ]
