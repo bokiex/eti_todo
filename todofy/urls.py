@@ -22,5 +22,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     url('todo/', include('todofy.apps.todo.urls')),
     url('contributions/', include('todofy.apps.contributions.urls')),
-    url('', include('todofy.apps.accounts.urls')),
+    url('accounts/', include('todofy.apps.accounts.urls')),
 ]

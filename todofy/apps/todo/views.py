@@ -2,7 +2,6 @@ from django.shortcuts import render, redirect
 from .forms import TodoForm
 from .models import Todo
 
-
 def index(request):
     items = Todo.objects.filter(archived=False)
     return render(request, 'todo-index.html', {'items': items, 'form': TodoForm()})

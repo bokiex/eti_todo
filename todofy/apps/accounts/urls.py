@@ -3,5 +3,5 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-  url('accounts/', include('django.contrib.auth.urls')),
+  url('', include('django.contrib.auth.urls'), name='login_index'),
 ]

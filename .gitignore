@@ -175,4 +175,7 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+# Environment
+venv
+
 # End of https://www.gitignore.io/api/macos,django,windows
