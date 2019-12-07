@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'bootstrap4',
     'todofy.apps.todo',
+    'todofy.apps.contributions',
     'todofy.apps.accounts',
     'django.contrib.admin',
     'django.contrib.auth',

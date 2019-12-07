@@ -21,6 +21,9 @@
                 <li class="nav-item {% if request.resolver_match.url_name == 'todo_history' %}active{% endif %}">
                     <a id="history" class="nav-link" href="{% url 'todo_history' %}">History</a>
                 </li>
+                <li class="nav-item {% if request.resolver_match.url_name == 'contributions_index' %}active{% endif %}">
+                    <a id="contributions" class="nav-link" href="{% url 'contributions_index' %}">Team Contributions</a>
+                </li>
             </ul>
         </div>
     </nav>
