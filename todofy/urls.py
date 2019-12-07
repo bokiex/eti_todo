@@ -20,7 +20,7 @@ from django.urls import path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    url('todo/', include('todofy.apps.todo.urls')),
+    url('contributions/', include('todofy.apps.contributions.urls')),
     url('', include('todofy.apps.accounts.urls')),
-    url('todo/', include('todofy.apps.todo.urls'))
-    
 ]
