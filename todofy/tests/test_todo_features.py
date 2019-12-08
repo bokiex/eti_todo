@@ -1,10 +1,9 @@
 import pytest
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
+import time
 
-driver = webdriver.Chrome()
-
-def test_successful_login():
+def test_successful_login(driver):
     driver.get("http://127.0.0.1:8000/accounts/login")
     name = driver.find_element_by_name("username")
     password = driver.find_element_by_name("password")
@@ -17,7 +16,7 @@ def test_successful_login():
         
     assert breadcrumb.text == "Todo"
 
-def test_todo_create():
+def test_todo_create(driver):
     driver.get("http://127.0.0.1:8000/todo/")
     content = driver.find_element_by_name("content")
     submit = driver.find_element_by_xpath("//button[@type='submit']")
@@ -28,15 +27,35 @@ def test_todo_create():
 
     assert item.text.startswith("ETI CA2")
 
-def test_todo_deletion():
+def test_todo_deletion(driver):
     driver.get("http://127.0.0.1:8000/todo/")
-    delete = driver.find_element_by_xpath("//button[@type='submit'][@class='btn btn-sm btn-warning']")
+    delete = driver.find_element_by_xpath("//button[@class='btn btn-sm btn-warning']")
     delete.click()
+    
 
-    assert len(delete) == 0
-
-def test_todo_deletion_error():
+def test_todo_deletion_error(driver):
     driver.get("http://127.0.0.1:8000/todo/")
     delete = driver.find_elements_by_xpath("//button[@class='btn btn-sm btn-warning']")
+    delete
 
     assert len(delete) == 0
+
+def test_todo_create2(driver):
+    driver.get("http://127.0.0.1:8000/todo/")
+    content = driver.find_element_by_name("content")
+    submit = driver.find_element_by_xpath("//button[@type='submit']")
+    content.send_keys("ETI CA2")
+    submit.click()
+
+    item = driver.find_element_by_xpath("//li[@class='list-group-item']")
+
+    assert item.text.startswith("ETI CA2")
+
+def test_todo_archive(driver):
+    driver.get("http://127.0.0.1:8000/todo/")
+    archive = driver.find_element_by_xpath("//button[@type='submit'][@class='btn btn-sm btn-info']")
+    archive.click()
+
+    item = driver.find_elements_by_xpath("//li[@class='list-group-item']")
+
+    assert len(item) == 0
