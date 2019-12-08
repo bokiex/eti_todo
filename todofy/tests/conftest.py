@@ -10,6 +10,8 @@ def driver():
 
     chrome = webdriver.Chrome(options=options)
 
+    chrome.set_window_size(1440, 900)
+
     yield chrome
 
     chrome.close()
