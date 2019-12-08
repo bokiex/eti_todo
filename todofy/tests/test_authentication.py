@@ -2,6 +2,7 @@ import pytest
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 
+
 def test_user_successful_login(driver):
     driver.get("http://127.0.0.1:8000/accounts/login")
     name = driver.find_element_by_name("username")
