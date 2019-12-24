@@ -19,6 +19,8 @@
             {% for item in items %}
                 <li id="todo" class="list-group-item">
                     {{ item.content }}
+                    <br />
+                    <small>{% if item.archived %} Completed {% else %} Not done {% endif %}| {{ item.created_at }}</small>
                 </li>
             {% empty %}
                 <li class="list-group-item disabled">No todo history yet..</li>
