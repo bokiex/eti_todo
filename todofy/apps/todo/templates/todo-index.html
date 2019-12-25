@@ -34,13 +34,7 @@
                             <form style='padding: 0.2em' action="{% url 'todo_archive' todo=item.id %}" method="post">
                                 {% csrf_token %}
                                 {% buttons %}
-                                    <button type="submit" class="btn btn-sm btn-info">Archive</button>
-                                {% endbuttons %}
-                            </form>
-                            <form style='padding: 0.2em' action="{% url 'todo_delete' todo=item.id %}" method="post">
-                                {% csrf_token %}
-                                {% buttons %}
-                                    <button type="submit" class="btn btn-sm btn-warning">Delete</button>
+                                    <button type="submit" class="btn btn-sm btn-info">Delete</button>
                                 {% endbuttons %}
                             </form>
                         </div>
