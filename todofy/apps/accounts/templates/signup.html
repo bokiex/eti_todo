@@ -1,0 +1,33 @@
+<!-- templates/registration/signup.html -->
+
+{% extends 'base.html' %}
+
+{% load bootstrap4 %}
+
+{% block title %}
+    Sign Up
+{% endblock  %}
+
+{% block breadcrumb %}
+  <li class="breadcrumb-item active">Sign Up</li>
+{% endblock %}
+{% block content %}
+  <form method="post" class="text-center border border-light p-5" action="#!">
+    {% csrf_token %}
+
+    <!-- Email -->
+    {% bootstrap_form form %}
+
+    <!-- Sign in button -->
+    {% buttons %}
+      <button type="submit" class="btn btn-info btn-block my-4">Sign Up</button>
+    {% endbuttons %}
+    <!-- Register -->
+    <p>
+      Already a member?
+      <a href="">Sign In</a>
+    </p>
+
+  </form>
+  <!-- Default form login -->
+{% endblock  %}
