@@ -3,7 +3,7 @@ from .forms import TodoForm
 from .models import Todo
 
 def index(request):
-    items = Todo.objects.filter(archived=False)
+    items = Todo.objects.filter(archived=False).order_by('-created_at')
     return render(request, 'todo-index.html', {'items': items, 'form': TodoForm()})
 
 
@@ -34,5 +34,5 @@ def delete(request, todo):
 
 
 def history(request):
-    items = Todo.objects.filter(archived=True)
+    items = Todo.objects.order_by('-created_at')
     return render(request, 'todo-history.html', {'items': items})
