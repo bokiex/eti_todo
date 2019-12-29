@@ -11,6 +11,7 @@
 {% endblock %}
 
 {% block content %}
+    {% if user.is_authenticated %}
     <div class="card">
         <div class="card-header">
             Todo History
@@ -27,4 +28,7 @@
             {% endfor %}
         </ul>
     </div>
+    {% else %}
+        <p>Not logged in!</p>
+    {% endif %}
 {% endblock %}

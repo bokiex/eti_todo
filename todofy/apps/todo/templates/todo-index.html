@@ -11,6 +11,7 @@
 {% endblock %}
 
 {% block content %}
+    {% if user.is_authenticated %}
     <form action="{% url 'todo_create' %}" method="post" class="form">
         {% csrf_token %}
         {% bootstrap_form form %}
@@ -45,4 +46,7 @@
             {% endfor %}
         </ul>
     </div>
+    {% else %}
+        <p>Not logged in!</p>
+    {% endif %}
 {% endblock %}
