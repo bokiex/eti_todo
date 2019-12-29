@@ -27,35 +27,35 @@ def test_todo_create(driver):
 
     assert item.text.startswith("ETI CA2")
 
-def test_todo_deletion(driver):
-    driver.get("http://127.0.0.1:8000/todo/")
-    delete = driver.find_element_by_xpath("//button[@class='btn btn-sm btn-warning']")
-    delete.click()
+# def test_todo_deletion(driver):
+#     driver.get("http://127.0.0.1:8000/todo/")
+#     delete = driver.find_element_by_xpath("//button[@class='btn btn-sm btn-warning']")
+#     delete.click()
     
 
-def test_todo_deletion_error(driver):
-    driver.get("http://127.0.0.1:8000/todo/")
-    delete = driver.find_elements_by_xpath("//button[@class='btn btn-sm btn-warning']")
-    delete
+# def test_todo_deletion_error(driver):
+#     driver.get("http://127.0.0.1:8000/todo/")
+#     delete = driver.find_elements_by_xpath("//button[@class='btn btn-sm btn-warning']")
+#     delete.click()
 
-    assert len(delete) == 0
+#     assert len(delete) == 0
 
-def test_todo_create2(driver):
-    driver.get("http://127.0.0.1:8000/todo/")
-    content = driver.find_element_by_name("content")
-    submit = driver.find_element_by_xpath("//button[@type='submit']")
-    content.send_keys("ETI CA2")
-    submit.click()
+# def test_todo_create2(driver):
+#     driver.get("http://127.0.0.1:8000/todo/")
+#     content = driver.find_element_by_name("content")
+#     submit = driver.find_element_by_xpath("//button[@type='submit']")
+#     content.send_keys("ETI CA2")
+#     submit.click()
 
-    item = driver.find_element_by_xpath("//li[@class='list-group-item']")
+#     item = driver.find_element_by_xpath("//li[@class='list-group-item']")
 
-    assert item.text.startswith("ETI CA2")
+#     assert item.text.startswith("ETI CA2")
 
-def test_todo_archive(driver):
-    driver.get("http://127.0.0.1:8000/todo/")
-    archive = driver.find_element_by_xpath("//button[@type='submit'][@class='btn btn-sm btn-info']")
-    archive.click()
+# def test_todo_archive(driver):
+#     driver.get("http://127.0.0.1:8000/todo/")
+#     archive = driver.find_element_by_xpath("//button[@type='submit'][@class='btn btn-sm btn-info']")
+#     archive.click()
 
-    item = driver.find_elements_by_xpath("//li[@class='list-group-item']")
+#     item = driver.find_elements_by_xpath("//li[@class='list-group-item']")
 
-    assert len(item) == 0
+#     assert len(item) == 0
