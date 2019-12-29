@@ -3,7 +3,7 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 
 
-def test_successful_signup(driver):
+def test_successful_signup(driver, live_server):
     driver.get("http://127.0.0.1:8000/accounts/signup/")
     name = driver.find_element_by_name("username")
     password1 = driver.find_element_by_name("password1")
@@ -29,5 +29,7 @@ def test_unsuccessful_signup(driver):
     password1.send_keys("123")
     password2.send_keys("123")
     signup.click()
-        
-    assert "Sign Up" in driver.title
+    
+    error = driver.find_element_by_xpath("//div[@class='invalid-feedback']")
+
+    assert error.text.startswith("This")

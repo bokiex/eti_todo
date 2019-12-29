@@ -29,7 +29,7 @@
                 <li class="list-group-item">
                     {{ item.content }}
                     <br />
-                    <small>{{ item.created_at }}</small>
+                    <small id="timestamp">{{ item.created_at }}</small>
                     <span class="float-right">
                         <div class="row">
                             <form style='padding: 0.2em' action="{% url 'todo_archive' todo=item.id %}" method="post">
